@@ -1,10 +1,12 @@
 import shutil
 import os
+import pathlib
 from list import * 
 
 def sorter( dir_path : str = '.' ):
     print("file sorter has started")
-    os.chdir(rf"{dir_path}")
+    path  = pathlib.Path(dir_path)
+    os.chdir(rf"{path}")
     for file_type in list_of_files_types:
         is_exists = os.path.exists(file_type)
         if not is_exists:
